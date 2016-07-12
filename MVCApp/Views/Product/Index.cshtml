@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<MVCApp.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @foreach (var item in Model)
+    {
+        <h3>Имя продукта: @item.Name</h3>
+        if (item.Category == "Канцтовары")
+        {
+            <p>На канцтовары действует <b>скидка 10%</b></p>
+        }
+        <hr />
+    }
+</body>
+</html>
